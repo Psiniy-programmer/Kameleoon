@@ -1,4 +1,6 @@
 .header {
-  font-family: "Nunito", sans-serif;
-  
+  font-family: MontserratBold, sans-serif;
+  font-size: 26px;
+
+  color: var(--color--txt-black-primary);
 }
