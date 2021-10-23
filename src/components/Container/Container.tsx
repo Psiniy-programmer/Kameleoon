@@ -2,7 +2,7 @@ import React from "react";
 import './Container.css';
 
 interface ContainerProps {
-  children: JSX.Element
+  children: JSX.Element | JSX.Element[]
 }
 
 const Container = ({children}: ContainerProps) => {

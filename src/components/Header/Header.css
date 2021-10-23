@@ -1,6 +1,8 @@
 .header {
-  font-family: MontserratBold, sans-serif;
-  font-size: 26px;
+  margin-bottom: 40px;
 
+  font-family: MontserratBold, sans-serif;
+  font-size: 16px;
+  line-height: 32px;
   color: var(--color--txt-black-primary);
 }
