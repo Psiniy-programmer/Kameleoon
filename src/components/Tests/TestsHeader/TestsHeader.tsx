@@ -2,7 +2,7 @@ import React from "react";
 import './TestsHeader.css';
 
 const TestsHeader = () => {
-  return <div className='tests__wrapper'>
+  return <div className='tests__wrapper tests__header'>
     <p>
       Name
     </p>

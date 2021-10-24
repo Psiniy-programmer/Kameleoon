@@ -5,14 +5,12 @@
     --color--txt-gray-primary: #5C5C5C;
     --color--txt-gray-secondary: #999999;
     --color--txt-gray-third: #D1D1D1;
-    --color--txt-green: #1BDA9D;
-    --color--txt-orange: #FF8346;
-    --color--txt-red: #FE4848;
     --color--txt-white: #FFFFFF;
     /* status colors */
-    --color--status-red: #E14165;
-    --color--status-pink-primary: #8686FF;
-    --color--status-pink-secondary: #C2C2FF;
+    --color--status-online: #1BDA9D;
+    --color--status-paused: #FF8346;
+    --color--status-draft: #5C5C5C;
+    --color--status-stopped: #FE4848;
     /* bg colors */
     --color--bg-main: #FAFAFA;
     --color--bg-white: #FFFFFF;

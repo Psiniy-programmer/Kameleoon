@@ -1,0 +1,7 @@
+.tests__header {
+    font-family: RobotoMedium, sans-serif;
+    font-size: 11px;
+    line-height: 13px;
+    color: var(--color--txt-gray-secondary);
+    text-transform: uppercase;
+}

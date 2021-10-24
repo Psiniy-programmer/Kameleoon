@@ -1,7 +1,16 @@
 .card {
+    position: relative;
     padding: 20px;
     border-radius: 3px;
     background-color: var(--color--bg-white);
+}
+
+.card__line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
 }
 
 .card__name {
@@ -22,18 +31,7 @@
     font-family: RobotoMedium;
     font-size: 12px;
     line-height: 14px;
-}
-
-.card__status_red {
-    color: var(--color--status-red);
-}
-
-.card__status_pink-primary {
-    color: var(--color--status-pink-primary);
-}
-
-.card__status_pink-secondary {
-    color: var(--color--status-pink-secondary);
+    text-transform: capitalize;
 }
 
 .card__site {
