@@ -26,14 +26,16 @@ const Tests = ({testsList}: TestsProps) => {
 
   return <div>
     <TestsHeader/>
-    {
-      testsList.map((test) => <Card
-        statusColor={getStatusColor(test.status)}
-        key={test.id}
-        data={test}
-        lineColor={test.color}
-      />)
-    }
+    <ul className='list'>
+      {
+        testsList.map((test) => <Card
+          statusColor={getStatusColor(test.status)}
+          key={test.id}
+          data={test}
+          lineColor={test.color}
+        />)
+      }
+    </ul>
   </div>
 }
 

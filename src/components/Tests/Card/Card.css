@@ -3,9 +3,12 @@
     padding: 20px;
     border-radius: 3px;
     background-color: var(--color--bg-white);
+    cursor: pointer;
 }
 
 .card__line {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
     position: absolute;
     top: 0;
     left: 0;

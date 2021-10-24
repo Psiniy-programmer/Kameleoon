@@ -1,8 +1,15 @@
+.list {
+    list-style-type: none;
+    display: grid;
+    row-gap: 5px;
+}
+
 .tests__wrapper {
     padding: 20px;
     display: grid;
     grid-template-columns: 389px 100px 62px 177px 95px;
     column-gap: 25px;
+    align-items: center;
 }
 
 .tests__wrapper > *:last-child{

@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from "react";
-import {NormalizedTest, Status} from "../../../Data/types";
+import React from "react";
+import {NormalizedTest} from "../../../Data/types";
 import Button from "../../Button";
 import './Card.css'
 
@@ -11,7 +11,7 @@ export interface CardProps {
 
 const Card = ({data: {id, name, siteName, status, type, siteId}, statusColor, lineColor}: CardProps) => {
 
-  return <div className='card tests__wrapper'>
+  return <li className='card tests__wrapper'>
     <div className='card__line' style={{backgroundColor: lineColor}}/>
     <p className='card__name'>
       {name}
@@ -28,7 +28,7 @@ const Card = ({data: {id, name, siteName, status, type, siteId}, statusColor, li
       </p>
       <Button text={'Results'}/>
     </div>
-  </div>
+  </li>
 }
 
 export default Card;
