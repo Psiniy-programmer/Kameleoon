@@ -1,0 +1,42 @@
+.card {
+    padding: 20px;
+    border-radius: 3px;
+    background-color: var(--color--bg-white);
+}
+
+.card__name {
+    font-family: RobotoMedium, sans-serif;
+    font-size: 13px;
+    line-height: 15px;
+    color: var(--color--txt-black-secondary);
+}
+
+.card__type {
+    font-family: RobotoRegular, sans-serif;
+    font-size: 12px;
+    line-height: 14px;
+    color: var(--color--txt-gray-primary);
+}
+
+.card__status {
+    font-family: RobotoMedium;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.card__status_red {
+    color: var(--color--status-red);
+}
+
+.card__status_pink-primary {
+    color: var(--color--status-pink-primary);
+}
+
+.card__status_pink-secondary {
+    color: var(--color--status-pink-secondary);
+}
+
+.card__site {
+    display: grid;
+    grid-template-columns: auto auto;
+}

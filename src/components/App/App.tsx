@@ -1,28 +1,34 @@
 import React, {useEffect, useState} from 'react';
 import Header from '../Header';
 import Container from "../Container";
-import DataService, {DataServiceErrors} from "../../Data/DataService";
-import {Site, Test} from "../../Data/types";
-import './App.css';
 import Input from "../Input";
+import './App.css';
+import DataService, {DataServiceErrors} from "../../Data/DataService";
+import {Data, NormalizedTest} from "../../Data/types";
+import Tests from "../Tests";
 
 const App = () => {
-  const [sites, setSites] = useState<Site[] | DataServiceErrors>([]);
-  const [tests, setTests] = useState<Test[] | DataServiceErrors>([]);
+  const [data, setData] = useState<Data>({
+    tests: [] as NormalizedTest[],
+    error: DataServiceErrors.NONE
+  })
 
   useEffect(() => {
-    DataService.getAllSites()
-      .then((reqResult) => setSites(reqResult))
-      .catch((errStatus) => setSites(errStatus))
-
-    DataService.getAllTests()
-      .then((reqResult) => setTests(reqResult))
-      .catch((errStatus) => setTests(errStatus))
+    DataService.getAppInfo()
+      .then((res) => setData(res))
+      .catch((err) => setData(err))
   }, [])
+
+  useEffect(() => {
+    console.log(data);
+  }, [data])
 
   return <Container>
     <Header/>
     <Input placeholder='What test are you looking for?'/>
+    {
+      data.error === DataServiceErrors.NONE ? <Tests testsList={data.tests}/> : <p>error</p>
+    }
   </Container>
 }
 

@@ -1,0 +1,10 @@
+.tests__wrapper {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 389px 100px 62px 177px 95px;
+    column-gap: 25px;
+}
+
+.tests__wrapper > *:last-child{
+    margin-left: 29px;
+}

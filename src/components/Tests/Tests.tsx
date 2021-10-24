@@ -1,9 +1,19 @@
 import React from "react";
+import TestsHeader from "./TestsHeader";
+import {NormalizedTest} from "../../Data/types";
+import Card from "./Card/Card";
 import './Tests.css';
 
-const Tests = () => {
+interface TestsProps {
+  testsList: NormalizedTest[]
+}
+
+const Tests = ({testsList}: TestsProps) => {
   return <div>
-    tests
+    <TestsHeader/>
+    {
+      testsList.map((test) => <Card key={test.id} data={test}/>)
+    }
   </div>
 }
 

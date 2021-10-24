@@ -1,3 +1,5 @@
+import {DataServiceErrors} from "./DataService";
+
 export enum Type {
   CLASSIC = "CLASSIC",
   SERVER_SIDE = "SERVER_SIDE",
@@ -23,3 +25,21 @@ export interface Test {
   status: Status;
   siteId: number;
 }
+
+export interface NormalizedTest {
+  id: number,
+  name: string,
+  type: Type,
+  status: Status,
+  siteId: number
+  siteName: string,
+  color?: string
+}
+
+export type sitesMap = Map<number, string>;
+
+export interface Data {
+  tests: NormalizedTest[],
+  error: DataServiceErrors
+}
+
