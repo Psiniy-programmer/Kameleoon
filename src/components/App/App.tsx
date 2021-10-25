@@ -8,6 +8,7 @@ import {Data, NormalizedTest} from "../../Data/types";
 import Tests from "../Tests";
 
 const App = () => {
+  const [searchInput, setSearchInput] = useState<string>('');
   const [data, setData] = useState<Data>({
     tests: [] as NormalizedTest[],
     error: DataServiceErrors.NONE
@@ -19,13 +20,17 @@ const App = () => {
       .catch((err) => setData(err))
   }, [])
 
-  useEffect(() => {
-    console.log(data);
-  }, [data])
+  const handleChangeInput = (e: React.FormEvent<HTMLInputElement>) => {
+    setSearchInput(e.currentTarget.value);
+  }
 
   return <Container>
     <Header/>
-    <Input placeholder='What test are you looking for?'/>
+    <Input
+      val={searchInput}
+      updateValFunc={handleChangeInput}
+      placeholder='What test are you looking for?'
+    />
     {
       data.error === DataServiceErrors.NONE && data.tests.length > 0 ? <Tests testsList={data.tests}/> : <p>loading</p>
     }
