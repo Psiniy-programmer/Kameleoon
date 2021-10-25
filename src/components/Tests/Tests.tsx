@@ -21,7 +21,6 @@ export type SortTests = {
 }
 
 const Tests = ({testsList}: TestsProps) => {
-  const [sortedList, setSortedList] = useState<NormalizedTest[]>(testsList);
   const [sortOrder, setSortOrder] = useState<SortTests>({
     order: SortTypes.ASC,
     field: 'name'
@@ -42,7 +41,7 @@ const Tests = ({testsList}: TestsProps) => {
     }
   }
 
-  const sortByStatus = (): void => {
+  const sortByStatus = (): NormalizedTest[] => {
     // ASC: Online, Paused, Stopped, Draft
     // DESC: Draft, Stopped, Paused, Online
     const {ONLINE, PAUSED, STOPPED, DRAFT} = Status;
@@ -61,7 +60,7 @@ const Tests = ({testsList}: TestsProps) => {
     }
 
     if (!keywords.length) {
-      return;
+      return [];
     }
 
     const res: NormalizedTest[] = keywords.reduce((acc: NormalizedTest[], cur) => {
@@ -70,10 +69,10 @@ const Tests = ({testsList}: TestsProps) => {
       return [...acc, ...tests];
     }, [] as NormalizedTest[]);
 
-    setSortedList(res);
+    return res;
   }
 
-  const sortByAlphabetical = (field: SortFields): void => {
+  const sortByAlphabetical = (field: SortFields): NormalizedTest[] => {
     const {order} = sortOrder;
 
     const res = testsList.sort((a, b) => {
@@ -87,18 +86,11 @@ const Tests = ({testsList}: TestsProps) => {
       }
     });
 
-    setSortedList(res);
-
+    return res;
   }
 
-  const sortTable = (field: SortFields): void => {
+  const updateSortField = (field: SortFields): void => {
     const {order} = sortOrder;
-
-    if (field === 'status') {
-      sortByStatus();
-    } else {
-      sortByAlphabetical(field);
-    }
     let newSortOrder: SortTypes;
 
     if (sortOrder.field !== field) {
@@ -113,14 +105,26 @@ const Tests = ({testsList}: TestsProps) => {
     });
   }
 
+  const sortedCards = (): NormalizedTest[] => {
+    let sorted: NormalizedTest[] = [];
+
+    if (sortOrder.field === 'status') {
+      sorted = sortByStatus();
+    } else {
+      sorted = sortByAlphabetical(sortOrder.field);
+    }
+
+    return sorted;
+  }
+
   return <main>
     <TestsHeader
-      sortTableFunc={sortTable}
+      sortTableFunc={updateSortField}
       sortInfo={sortOrder}
     />
     <ul className='list'>
       {
-        sortedList.map((test) => <Card
+        sortedCards().map((test) => <Card
           statusColor={getStatusColor(test.status)}
           key={test.id}
           data={test}
