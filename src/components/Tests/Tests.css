@@ -11,7 +11,7 @@
     align-items: center;
 }
 
-.tests__wrapper > *:last-child{
+.tests__wrapper > *:last-child {
     margin-left: 29px;
 }
 
