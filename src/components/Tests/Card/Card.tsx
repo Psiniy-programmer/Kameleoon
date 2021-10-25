@@ -1,6 +1,6 @@
 import React from "react";
 import {NormalizedTest} from "../../../Data/types";
-import Button from "../../Button";
+import Results from "../Results";
 import './Card.css'
 
 export interface CardProps {
@@ -9,7 +9,7 @@ export interface CardProps {
   lineColor?: string
 }
 
-const Card = ({data: {id, name, siteName, status, type, siteId}, statusColor, lineColor}: CardProps) => {
+const Card = ({data: {id, name, site, status, type}, statusColor, lineColor}: CardProps) => {
 
   return <li className='card tests__wrapper'>
     <div className='card__line' style={{backgroundColor: lineColor}}/>
@@ -24,9 +24,11 @@ const Card = ({data: {id, name, siteName, status, type, siteId}, statusColor, li
     </p>
     <div className='card__site'>
       <p className='card__type'>
-        {siteName}
+        {site}
       </p>
-      <Button text={'Results'}/>
+      <Results
+        status={status}
+      />
     </div>
   </li>
 }

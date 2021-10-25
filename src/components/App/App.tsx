@@ -27,7 +27,7 @@ const App = () => {
     <Header/>
     <Input placeholder='What test are you looking for?'/>
     {
-      data.error === DataServiceErrors.NONE ? <Tests testsList={data.tests}/> : <p>error</p>
+      data.error === DataServiceErrors.NONE && data.tests.length > 0 ? <Tests testsList={data.tests}/> : <p>loading</p>
     }
   </Container>
 }

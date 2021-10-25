@@ -32,7 +32,7 @@ export interface NormalizedTest {
   type: Type,
   status: Status,
   siteId: number
-  siteName: string,
+  site: string,
   color?: string
 }
 

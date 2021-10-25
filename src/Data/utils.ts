@@ -23,7 +23,7 @@ export const normalizeTests = (testCase: Test[], sitesMap: sitesMap): Normalized
 
     const testCase: NormalizedTest = {
       ...cur,
-      siteName: siteName,
+      site: siteName,
       color: siteColor
     };
 

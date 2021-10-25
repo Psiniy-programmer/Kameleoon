@@ -40,4 +40,5 @@
 .card__site {
     display: grid;
     grid-template-columns: auto auto;
+    align-items: center;
 }

@@ -16,4 +16,7 @@
     --color--bg-white: #FFFFFF;
     /* stroke colors */
     --color--stroke-main: #EBEBEB;
+    /* button colors */
+    --color--btn-green: #2EE5AC;
+    --color--btn-gray: #7D7D7D;
 }
