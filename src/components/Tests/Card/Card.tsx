@@ -1,6 +1,7 @@
 import React from "react";
-import {NormalizedTest} from "../../../Data/types";
-import Results from "../Results";
+import {NormalizedTest, Status} from "../../../Data/types";
+import Button from "../../Button";
+import {ButtonColors} from "../../Button/Button";
 import './Card.css'
 
 export interface CardProps {
@@ -10,6 +11,10 @@ export interface CardProps {
 }
 
 const Card = ({data: {id, name, site, status, type}, statusColor, lineColor}: CardProps) => {
+
+  const handleClickBtn = () => {
+    console.log('clicked');
+  }
 
   return <li className='card tests__wrapper'>
     <div className='card__line' style={{backgroundColor: lineColor}}/>
@@ -26,8 +31,10 @@ const Card = ({data: {id, name, site, status, type}, statusColor, lineColor}: Ca
       <p className='card__type'>
         {site}
       </p>
-      <Results
-        status={status}
+      <Button
+        callback={handleClickBtn}
+        color={status === Status.DRAFT ? ButtonColors.GRAY : ButtonColors.GREEN}
+        text={status === Status.DRAFT ? 'finalize' : 'results'}
       />
     </div>
   </li>

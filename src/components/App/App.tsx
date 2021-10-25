@@ -6,6 +6,7 @@ import DataService, {DataServiceErrors} from "../../Data/DataService";
 import {Data, NormalizedTest} from "../../Data/types";
 import './App.css';
 import Tests from "../Tests";
+import SearchResult from "../SearchResult";
 
 const App = () => {
   const [searchInput, setSearchInput] = useState<string>('');
@@ -24,6 +25,10 @@ const App = () => {
     setSearchInput(e.currentTarget.value);
   }
 
+  const handleClearInput = () => {
+    setSearchInput('');
+  }
+
   const handleFilter = (): NormalizedTest[] => {
     return data.tests.filter((testCase) => testCase.name.toLowerCase().includes(searchInput))
   }
@@ -31,13 +36,16 @@ const App = () => {
   return <Container>
     <Header/>
     <Input
+      counterVal={
+        searchInput.length > 0 ? handleFilter().length : data.tests.length
+      }
       val={searchInput}
       updateValFunc={handleChangeInput}
       placeholder='What test are you looking for?'
     />
     {
       searchInput.length > 0 ?
-        <Tests testsList={handleFilter()}/>
+        <SearchResult clearResultList={handleClearInput} data={handleFilter()}/>
         : <Tests testsList={data.tests}/>
     }
   </Container>

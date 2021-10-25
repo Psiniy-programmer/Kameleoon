@@ -4,10 +4,11 @@ import './Input.css';
 interface InputProps {
   placeholder: string,
   val: string,
+  counterVal: number,
   updateValFunc: (e: React.FormEvent<HTMLInputElement>) => void
 }
 
-const Input = ({placeholder, val, updateValFunc}: InputProps) => {
+const Input = ({placeholder, val, updateValFunc, counterVal}: InputProps) => {
   return <div className='input'>
     <div className='input__img'>
       <img
@@ -23,7 +24,7 @@ const Input = ({placeholder, val, updateValFunc}: InputProps) => {
       value={val}
     />
     <p className='input__count'>
-      7 tests
+      {counterVal} tests
     </p>
   </div>
 }

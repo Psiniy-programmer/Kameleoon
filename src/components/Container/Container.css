@@ -4,5 +4,6 @@
 }
 
 .container__inner {
+    position: relative;
     padding: 41px 48px 0 48px;
 }
