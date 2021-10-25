@@ -2,16 +2,16 @@ import React, {useEffect, useState} from 'react';
 import Header from '../Header';
 import Container from "../Container";
 import Input from "../Input";
-import './App.css';
 import DataService, {DataServiceErrors} from "../../Data/DataService";
 import {Data, NormalizedTest} from "../../Data/types";
+import './App.css';
 import Tests from "../Tests";
 
 const App = () => {
   const [searchInput, setSearchInput] = useState<string>('');
   const [data, setData] = useState<Data>({
     tests: [] as NormalizedTest[],
-    error: DataServiceErrors.NONE
+    error: DataServiceErrors.INIT
   })
 
   useEffect(() => {
@@ -24,6 +24,10 @@ const App = () => {
     setSearchInput(e.currentTarget.value);
   }
 
+  const handleFilter = (): NormalizedTest[] => {
+    return data.tests.filter((testCase) => testCase.name.toLowerCase().includes(searchInput))
+  }
+
   return <Container>
     <Header/>
     <Input
@@ -32,7 +36,9 @@ const App = () => {
       placeholder='What test are you looking for?'
     />
     {
-      data.error === DataServiceErrors.NONE && data.tests.length > 0 ? <Tests testsList={data.tests}/> : <p>loading</p>
+      searchInput.length > 0 ?
+        <Tests testsList={handleFilter()}/>
+        : <Tests testsList={data.tests}/>
     }
   </Container>
 }

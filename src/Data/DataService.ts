@@ -4,6 +4,7 @@ import axios from "axios";
 import {normalizeTests} from "./utils";
 
 export enum DataServiceErrors {
+  INIT,
   NONE,
   ALL_SITES,
   ONE_SITE,
