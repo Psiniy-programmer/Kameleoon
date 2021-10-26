@@ -12,7 +12,7 @@ const Input = ({placeholder, val, updateValFunc, counterVal}: InputProps) => {
   return <div className='input'>
     <div className='input__img'>
       <img
-        src={process.env.PUBLIC_URL + 'Interaction-Search.svg'}
+        src={process.env.PUBLIC_URL + '/Interaction-Search.svg'}
         alt="search"
       />
     </div>

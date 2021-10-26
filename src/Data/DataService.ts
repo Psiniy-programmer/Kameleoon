@@ -1,6 +1,6 @@
+import axios from "axios";
 import api from "./api";
 import {Data, NormalizedTest, Site, sitesMap, Test} from "./types";
-import axios from "axios";
 import {normalizeTests} from "./utils";
 
 export enum DataServiceErrors {

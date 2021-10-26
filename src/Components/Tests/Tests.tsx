@@ -108,10 +108,13 @@ const Tests = ({testsList}: TestsProps) => {
   const sortedCards = (): NormalizedTest[] => {
     let sorted: NormalizedTest[] = [];
 
-    if (sortOrder.field === 'status') {
-      sorted = sortByStatus();
-    } else {
-      sorted = sortByAlphabetical(sortOrder.field);
+    switch (sortOrder.field) {
+      case "status":
+        sorted = sortByStatus();
+        break;
+      default:
+        sorted = sortByAlphabetical(sortOrder.field);
+        break;
     }
 
     return sorted;
