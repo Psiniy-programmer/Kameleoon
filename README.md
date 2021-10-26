@@ -1,53 +1,19 @@
-# Getting Started with Create React App
+#Interview task for frontend developers
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+##Technical requirements
 
-## Available Scripts
+1. To complete this task, you should use the create-react-app application template (docs).
+2. You are not allowed to use other external libraries to perform the task, except for node-sass, axios, classnames, react-router-dom, prop-types;
+3. You have to use the prop-types library if you don't use TypeScript.
+4. You have to use React hooks.
+5. You can use css or scss of your choice.
 
-In the project directory, you can run:
+###Results
 
-### `yarn start`
+- Code was written with usage Typescript, react-router-dom, axios.
+- Inside Project connected proxy on data server which located on http://localhost:3100.
+- Realized whole Functionality requirements.
+- Api link: https://development.kameleoon.net/oivanov/frontend-interview-task-api.
+- Test task link: https://development.kameleoon.net/oivanov/frontend-interview-task.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more
-information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will
-remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right
-into your project so you have full control over them. All of the commands except `eject` will still work, but they will
-point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you
-shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t
-customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in
-the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+####Time taken to complete the task = 9 hours. 
